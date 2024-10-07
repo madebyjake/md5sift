@@ -1,0 +1,5 @@
+
+# This tool uses only standard Python libraries. 
+# However, if you're working in a virtual environment or deployment where type hints or extensions are needed, you may want to install the following:
+
+typing-extensions
