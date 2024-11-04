@@ -21,8 +21,8 @@
 Clone the repository or download the `md5sift.py` file.
 
 ```bash
-git clone https://github.com/madebyjake/md5sift.git
-cd md5sift
+git clone https://github.com/madebyjake/md5sift.git \
+&& cd md5sift
 ```
 
 ## Usage
