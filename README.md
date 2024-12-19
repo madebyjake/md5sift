@@ -1,7 +1,6 @@
+# `md5sift`
 
-# MD5Sift
-
-**MD5Sift** is a CLI tool written in Python that generates MD5 checksum reports for files within a local directory or network share. It supports filtering files by extension or from a provided list of file names and outputs the results into a CSV report.
+**md5sift** is a CLI tool written in Python that generates MD5 checksum reports for files within a local directory or network share. It supports filtering files by extension or from a provided list of file names and outputs the results into a CSV report.
 
 ## Features
 
@@ -42,6 +41,8 @@ If no `--scan-path` is provided, the tool scans the current directory by default
 - `-v, --verbose`: Enable verbose mode for real-time progress reporting.
 - `-t, --threads`: Number of threads to use for processing (default: CPU core count).
 - `--test`: Run in test mode and specify how many files to process (e.g., `--test 10` for first 10 files).
+- `-a, --algorithm`: Hashing algorithm to use (`md5`, `sha1`, `sha256`). Defaults to `md5`.
+- `--exclude`: Paths to exclude from scanning.
 
 ### Example
 
@@ -57,7 +58,20 @@ python md5sift.py -s /path/to/scan -o /path/to/output/report.csv -f /path/to/fil
 
 # Test mode (process first 10 files)
 python md5sift.py -s /path/to/scan -o /path/to/output/report.csv --test 10
+
+# Example using SHA-256 algorithm and excluding certain directories
+python md5sift.py -s /path/to/scan -o /path/to/output/report.csv -a sha256 --exclude /path/to/scan/exclude_dir
 ```
+
+## Testing
+
+To run the unit tests for **MD5Sift**, execute the following command in the project directory:
+
+```bash
+python -m unittest test_md5sift.py
+```
+
+This command will run all the tests defined in `test_md5sift.py` and display the results.
 
 ## Logging
 
@@ -65,4 +79,8 @@ MD5Sift uses logging to provide detailed information. By default, logging is set
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
+
+## Contributing
+
+Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
