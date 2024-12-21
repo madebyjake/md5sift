@@ -15,7 +15,7 @@ class GenerateSpecCommand(Command):
 
     def run(self):
         spec_content = f"""%global name md5sift
-%global version 1.1.0
+%global version 1.0.0
 %global release 1%{{?dist}}
 %global summary Generate MD5 checksum reports with filtering.
 
@@ -69,7 +69,7 @@ rm -rf %{{buildroot}}
 
 setup(
     name='md5sift',
-    version='1.1.0',
+    version='1.0.0',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
