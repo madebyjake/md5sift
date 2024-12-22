@@ -14,10 +14,10 @@ class GenerateSpecCommand(Command):
         pass
 
     def run(self):
-        spec_content = f"""%global name md5sift
-%global version 1.0.0
+        spec_content = f"""%global name {self.distribution.get_name()}
+%global version {self.distribution.get_version()}
 %global release 1%{{?dist}}
-%global summary Generate MD5 checksum reports with filtering.
+%global summary {self.distribution.get_description()}
 
 Name:           %{{name}}
 Version:        %{{version}}
@@ -54,9 +54,6 @@ install -d %{{buildroot}}%{{python3_sitelib}}
 %{{python3_sitelib}}/md5sift/__main__.py
 %{{python3_sitelib}}/md5sift-*.egg-info
 
-%clean
-rm -rf %{{buildroot}}
-
 %changelog
 * {datetime.datetime.now().strftime('%a %b %d %Y')} Jake Wells <https://github.com/madebyjake/>
 - https://github.com/madebyjake/md5sift/releases/
@@ -67,10 +64,17 @@ rm -rf %{{buildroot}}
         
         print("✅ RPM spec file 'md5sift.spec' has been successfully generated!")
 
+try:
+    with open('README.md', 'r') as f:
+        long_description = f.read()
+except FileNotFoundError:
+    long_description = "Quickly generate MD5 checksum reports for large directories with filtering options."
+
 setup(
     name='md5sift',
     version='1.0.0',
     packages=find_packages(),
+    py_modules=['md5sift'],
     entry_points={
         'console_scripts': [
             'md5sift=md5sift.__main__:main'
@@ -78,7 +82,7 @@ setup(
     },
     install_requires=[],
     author='Jake Wells',
-    #author_email='you@example.com',
+    author_email='jake@example.com',
     description='Quickly generate MD5 checksum reports for large directories with filtering options.',
     license='MIT',
     url='https://github.com/madebyjake/md5sift',
@@ -87,7 +91,7 @@ setup(
         'License :: OSI Approved :: MIT License'
     ],
     python_requires='>=3.6',
-    long_description=open('README.md').read(),
+    long_description=long_description,
     long_description_content_type='text/markdown',
     cmdclass={
         'genspec': GenerateSpecCommand,
