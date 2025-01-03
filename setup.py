@@ -82,7 +82,7 @@ setup(
     },
     install_requires=[],
     author='Jake Wells',
-    author_email='jake@example.com',
+    author_email='38321395+madebyjake@users.noreply.github.com',
     description='Quickly generate MD5 checksum reports for large directories with filtering options.',
     license='MIT',
     url='https://github.com/madebyjake/md5sift',
