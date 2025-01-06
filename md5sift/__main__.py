@@ -10,9 +10,10 @@ from typing import Optional, Set, Tuple
 
 import click
 
+VERSION = "1.1.0"
+
 # Configure logging settings
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-
 
 def calculate_hash(file_path: str, algorithm: str, verbose: bool = False) -> Tuple[str, Optional[str], Optional[str]]:
     """Calculate the hash of a file using the specified algorithm."""
@@ -169,6 +170,7 @@ def walk_directory_and_log(
     default=[],
     help="Paths to exclude from scanning (can be specified multiple times)."
 )
+@click.version_option(version=VERSION)
 def main(scan_path, output, extension, filelist, verbose, threads, test, algorithm, exclude):
     """
     Generate checksums for files in a directory and save to CSV
