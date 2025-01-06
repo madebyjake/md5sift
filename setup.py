@@ -70,9 +70,17 @@ try:
 except FileNotFoundError:
     long_description = "Quickly generate MD5 checksum reports for large directories with filtering options."
 
+# Extract version from __main__.py
+version = None
+with open(os.path.join(os.path.dirname(__file__), 'md5sift', '__main__.py')) as f:
+    for line in f:
+        if line.startswith('VERSION'):
+            version = line.split('=')[1].strip().strip('"').strip("'")
+            break
+
 setup(
     name='md5sift',
-    version='1.1.0',
+    version=version,
     packages=find_packages(),
     py_modules=['md5sift'],
     entry_points={
@@ -81,7 +89,7 @@ setup(
         ]
     },
     install_requires=[
-    "click>=7.0,<9.0",
+        "click>=7.0,<9.0",
     ],
     author='Jake Wells',
     author_email='38321395+madebyjake@users.noreply.github.com',
