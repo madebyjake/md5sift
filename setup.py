@@ -72,7 +72,7 @@ except FileNotFoundError:
 
 setup(
     name='md5sift',
-    version='1.0.0',
+    version='1.1.0',
     packages=find_packages(),
     py_modules=['md5sift'],
     entry_points={
@@ -80,7 +80,9 @@ setup(
             'md5sift=md5sift.__main__:main'
         ]
     },
-    install_requires=[],
+    install_requires=[
+    "click>=7.0,<9.0",
+    ],
     author='Jake Wells',
     author_email='38321395+madebyjake@users.noreply.github.com',
     description='Quickly generate MD5 checksum reports for large directories with filtering options.',
