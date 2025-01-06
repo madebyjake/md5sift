@@ -86,6 +86,7 @@ md5sift -s <scan_directory> -o <output_file> [OPTIONS]
 | `-a, --algorithm` | Hashing algorithm (`md5`, `sha1`, `sha256`). Defaults to `md5`.            |
 | `--exclude`       | Paths or directories to exclude from scanning.                             |
 | `-h, --help`      | Show help message.                                                         |
+| `--version`       | Show version information.                                                  |
 
 ### Examples
 
