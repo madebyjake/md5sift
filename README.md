@@ -11,7 +11,6 @@
 - **Algorithm Options:** Supports hashing algorithms (`md5`, `sha1`, `sha256`).
 - **Verbose Mode:** Real-time progress updates.
 - **Test Mode:** Process a subset of files for quick validation.
-- **Pure Python:** Built with standard Python libraries.
 
 ## Installation
 
@@ -86,6 +85,7 @@ md5sift -s <scan_directory> -o <output_file> [OPTIONS]
 | `--test`          | Run in test mode and process a limited number of files.                    |
 | `-a, --algorithm` | Hashing algorithm (`md5`, `sha1`, `sha256`). Defaults to `md5`.            |
 | `--exclude`       | Paths or directories to exclude from scanning.                             |
+| `-h, --help`      | Show help message.                                                         |
 
 ### Examples
 
