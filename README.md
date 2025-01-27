@@ -2,6 +2,8 @@
 
 **md5sift** is a CLI tool written in Python designed to generate checksum reports for files across local directories or network shares. It offers **filtering by file extensions or predefined file lists** and produces reports in **CSV format**.
 
+**NOTICE**: I have ended development on this project and moved over to [hashreport](https://github.com/madebyjake/hashreport), a complete rewrite that introduces additional features and significant improvements. Please consider either exploring the new project, or feel free to fork and continue working on this one.
+
 ## Features
 
 - **Bulk Checksum Generation:** Calculate hashes for multiple files in a directory.
